@@ -1,0 +1,33 @@
+h1 {
+    color: black;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(103, 164, 204);
+}
+
+p {
+    color: black;
+    text-align: center;
+}
+
+a {
+    color: black;
+    text-align: center;
+    font-size: 2em;
+}
+
+h2 {
+    text-align: center;
+}
+
+.row {
+    background-color: lightblue;
+    text-align: center;
+  }
+
+  .center {
+    background-color: lightblue;
+    text-align: center;
+  }
