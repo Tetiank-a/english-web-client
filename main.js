@@ -12,6 +12,7 @@ $(document).ready(function () {
         alert("hello world!");
     });
 });
+//NORMAL JS
         function changeImage1() {
             if (document.images["pic"].alt == "Letter") {
                 document.images["pic"].src = "pic/a1.png";

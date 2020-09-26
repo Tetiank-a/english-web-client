@@ -1,10 +1,32 @@
+.example_d {
+    color: #765394 !important;
+    background: plum;
+    padding: 0.7em;
+    width: 4em;
+    margin: 0.1em;
+    border: 0.15em solid #765394 !important;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    font-size: 2em;
+    }
+    .example_d:hover {
+        color: #494949 !important;
+        border-radius: 50px;
+        border-color: #494949 !important;
+        transition: all 0.3s ease 0s;
+        }
 h1 {
-    color: black;
+    color: white;
     text-align: center;
 }
 
 body {
-    background-color: rgb(103, 164, 204);
+    background-image: url("pic/back.gif");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 p {
@@ -23,7 +45,6 @@ h2 {
 }
 
 .row {
-    background-color: lightblue;
     text-align: center;
   }
 
