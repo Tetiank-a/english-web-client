@@ -13,18 +13,16 @@ $(document).ready(function () {
     });
 });
 //NORMAL JS
-        function changeImage1() {
-            if (document.images["pic"].alt == "Letter") {
-                document.images["pic"].src = "pic/a1.png";
-                document.images["pic"].alt = "Image";
-            } 
-            else 
-            {
-                document.images["pic"].src = "pic/a.png";
-                document.images["pic"].alt = "Letter";
-            }
-        }
-        function Check()
-        {
-            alert("Hi");
-        }
+function changeImage1() {
+    if (document.images["pic"].alt == "Letter") {
+        document.images["pic"].src = "pic/a1.png";
+        document.images["pic"].alt = "Image";
+    }
+    else {
+        document.images["pic"].src = "pic/a.png";
+        document.images["pic"].alt = "Letter";
+    }
+}
+function Check() {
+    alert("Hi");
+}
