@@ -8,24 +8,126 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="main.js"></script>
+    <style>
+        .gameArea{
+            width: 50%;
+            height: 400px;
+            padding: 20px 0;
+            background-color: rgba(202, 146, 216, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        section{
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h3{
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        input{
+            width: 40%;
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 25px;
+            outline: none;
+            border: none;
+            color: black;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+        }
+        button{
+            font-size:1rem;
+            cursor: pointer;
+            outline: none;
+            margin-top: 10px;
+            }
+        button.btn{
+            font-weight: 600;
+            padding: 1rem 2rem;
+            background: white;
+            text-transform: uppercase;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(0.65,-0.25,0.25,1.95);
+        }
+        button.btn:hover,button.btn:focus, button.btn:active{
+            letter-spacing: 0.125rem;
+            word-spacing:0.2rem;
+        }
+        .hidden{
+            display: none;
+        }
+        </style>
 </head>
 
 <body>
-    <script>
-        //document.body.style.backgroundImage = "url('pic/back.jpg')";
-    </script>
-    <h1 id="clickMe">Learning words</h1>
-    <h2>Write a word</h2>
-    <div class="center">
-        <img src="pic/dog.png">
+   
+<header>
+    <h1>The Word Game</h1>
+    </header>
+    <section>
+    <div class= "gameArea">
+        <h3 class = "msg"> </h3>
+        <input type = text class = "hidden">
+        <button class = "btn">Click here to start</button>
     </div>
-    <br>
-    <!--- <label for="fname">Who is it?</label> -->
-    <div class="center">
-        <input type="text" id="fname" name="fname" autocomplete="off">
-        <button type="Submit_word" onclick="Check()">GO</button>
-    </div>
-    <div class="button_cont" align="center"><a class="example_d" href="Index.html">Back</a></div>
+   </section>
+   <script>
+
+       const msg = document.querySelector('.msg');
+       const guess = document.querySelector('input');
+       const btn = document.querySelector('.btn');
+       let play = false;
+       let newWords = "";
+       let randWords = "";
+
+       let sWords = ['python','javasrcipt','c++','php'];
+       const CreateNewWords = () => {
+              let ranNum = Math.floor(Math.random() * sWords.length);
+              let newTempSwords = sWords[ranNum];
+              return newTempSwords;
+       }
+
+       const scrambleWords = (arr) => {
+          for (let i = arr.length-1; i>0 ; i-- ){
+              let temp = arr[i];
+              let j = Math.floor(Math.random()*(i+1));
+
+              arr[i] = arr[j];
+              arr[j] = temp;
+          }
+          return arr;
+       }
+       
+       
+       btn.addEventListener('click',function(){
+           if(!play){
+               play = true;
+               btn.innerHTML = "Guess";
+               guess.classList.toggle('hidden');   
+               newWords = CreateNewWords(); 
+               randWords = scrambleWords(newWords.split("")).join("");
+               msg.innerHTML = `Guess the word: ${randWords}`;
+           }else{
+               let tempWord = guess.value;
+               if(tempWord === newWords){
+                   play = false;
+                   msg.innerHTML = `It's Correct. It is ${newWords}`;
+                   btn.innerHTML = "Start again";
+                   guess.classList.toggle('hidden'); 
+               }else{
+                   msg.innerHTML = `Sorry, it's not correct. Please try again ${randWords}`;
+               }
+           }
+       })
+       
+   </script>
+   <div class="button_cont" align="center"><a class="example_d" href="Index.html">Back</a></div>
 </body>
 
-</html>
+</html> 
