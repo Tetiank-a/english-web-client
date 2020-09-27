@@ -13,16 +13,22 @@ $(document).ready(function () {
     });
 });
 //NORMAL JS
-function changeImage1() {
-    if (document.images["pic"].alt == "Letter") {
-        document.images["pic"].src = "pic/a1.png";
-        document.images["pic"].alt = "Image";
+function changeImage1(img1, img2, picId) {
+    s=picId;
+    if (document.images[s].alt == "Letter") {
+        document.images[s].src = img2;
+        document.images[s].alt = "Image";
     }
     else {
-        document.images["pic"].src = "pic/a.png";
-        document.images["pic"].alt = "Letter";
+        document.images[s].src = img1;
+        document.images[s].alt = "Letter";
     }
 }
 function Check() {
     alert("Hi");
+}
+function pl(a)
+{
+    var snd = new Audio("voice/a.mp3");
+    snd.play();
 }
