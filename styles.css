@@ -37,13 +37,14 @@ p {
 }
 
 a {
-    color: black;
+    color: rgb(185, 131, 216);
     text-align: center;
     font-size: 2em;
 }
 
 h2 {
     text-align: center;
+    color: white;
 }
 
 span {
