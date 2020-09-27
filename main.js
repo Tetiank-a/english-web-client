@@ -29,6 +29,6 @@ function Check() {
 }
 function pl(a)
 {
-    var snd = new Audio("voice/a.mp3");
+    var snd = new Audio(a);
     snd.play();
 }
